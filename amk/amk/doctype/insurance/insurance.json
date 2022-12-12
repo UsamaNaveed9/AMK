@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-12-12 09:24:56.753087",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "insurance_type",
+  "column_break_3",
+  "renewal_date",
+  "expiry_date",
+  "employee_details_section",
+  "employee_id",
+  "civil_id_number",
+  "data_9",
+  "first_name",
+  "last_name",
+  "section_break_12",
+  "location",
+  "license_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "IS-.YY.-"
+  },
+  {
+   "fieldname": "insurance_type",
+   "fieldtype": "Link",
+   "label": "Insurance Type",
+   "options": "Insurance Type"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "renewal_date",
+   "fieldtype": "Data",
+   "label": "Renewal date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Data",
+   "label": "Expiry date"
+  },
+  {
+   "depends_on": "eval:doc.insurance_type=='Residency Renewal'",
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "label": "Employee Id",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "civil_id_number",
+   "fieldtype": "Data",
+   "label": "Civil Id Number"
+  },
+  {
+   "fieldname": "data_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_id.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First name"
+  },
+  {
+   "fetch_from": "employee_id.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last name"
+  },
+  {
+   "depends_on": "eval:doc.insurance_type=='Fire Safety' || doc.insurance_type=='Company Contract Licenses'",
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "license_no",
+   "fieldtype": "Data",
+   "label": "License No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-12 09:32:33.123693",
+ "modified_by": "Administrator",
+ "module": "Amk",
+ "name": "Insurance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

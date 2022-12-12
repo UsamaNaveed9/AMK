@@ -1,0 +1,189 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-12-12 09:11:51.170939",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "form_type",
+  "passport_issue_date",
+  "passport_received_date",
+  "column_break_8",
+  "employee_id",
+  "first_name",
+  "last_name",
+  "civil_number",
+  "passport_details_section",
+  "passport_number",
+  "passport_valid_till",
+  "date_of_issue",
+  "place_of_issue",
+  "column_break_16",
+  "standard_text",
+  "purpose",
+  "purpose_in_arabic",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RF-.YY.-\nIT-.YY.-"
+  },
+  {
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.form_type=='Issue'",
+   "fieldname": "passport_issue_date",
+   "fieldtype": "Date",
+   "label": "Passport Issue Date"
+  },
+  {
+   "depends_on": "eval:doc.form_type=='Receipt'",
+   "fieldname": "passport_received_date",
+   "fieldtype": "Date",
+   "label": "Passport Received Date "
+  },
+  {
+   "fetch_from": "employee_id.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fetch_from": "employee_id.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "civil_number",
+   "fieldtype": "Data",
+   "label": "Civil number"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "form_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Form Type",
+   "options": "\nReceipt\nIssue"
+  },
+  {
+   "fieldname": "passport_details_section",
+   "fieldtype": "Section Break",
+   "label": "Passport Details"
+  },
+  {
+   "fetch_from": "employee_id.passport_number",
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number"
+  },
+  {
+   "fetch_from": "employee_id.valid_upto",
+   "fieldname": "passport_valid_till",
+   "fieldtype": "Date",
+   "label": "Passport Valid Till"
+  },
+  {
+   "fetch_from": "employee_id.date_of_issue",
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fetch_from": "employee_id.place_of_issue",
+   "fieldname": "place_of_issue",
+   "fieldtype": "Link",
+   "label": "\nPlace of Issue\n",
+   "options": "Country"
+  },
+  {
+   "default": "That I received my original passport from\nA & M Integrated General Trading Group Company",
+   "fieldname": "standard_text",
+   "fieldtype": "Small Text",
+   "label": "Standard Text"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose "
+  },
+  {
+   "fieldname": "purpose_in_arabic",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Purpose In Arabic"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Passport Form",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-12 22:41:33.777371",
+ "modified_by": "Administrator",
+ "module": "Amk",
+ "name": "Passport Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
