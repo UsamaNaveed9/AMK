@@ -19,6 +19,7 @@ def make_journal_entry(doc,action):
 		new_doc.voucher_type = "Journal Entry"
 		new_doc.posting_date = today()
 		new_doc.reference_invoice = doc.name
+		new_doc.company = doc.company
 		for i in doc.payments:
 			
 			if(i.mode_of_payment != "Cash"):

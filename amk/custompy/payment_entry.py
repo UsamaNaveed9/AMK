@@ -14,6 +14,7 @@ def make_journal_entry(doc,action):
 			expense_account = mop.expense_account
 			new_doc = frappe.new_doc("Journal Entry")
 			new_doc.cheque_no = doc.name
+			new_doc.company = doc.company
 			row = new_doc.append("accounts",{})
 			row.account = bank_account
 			if(mop.extra_cost):
