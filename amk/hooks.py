@@ -89,13 +89,15 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+    "Payment Entry": {"on_submit":"amk.custompy.payment_entry.make_journal_entry"},
+	"Sales Invoice": {"on_submit":"amk.custompy.sales_invoice.make_journal_entry"}
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 #	}
-# }
+ }
 
 # Scheduled Tasks
 # ---------------
